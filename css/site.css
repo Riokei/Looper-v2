@@ -56,3 +56,14 @@ white-space: pre-wrap;
 word-break: break-all;
 word-wrap: break-word;
 }
+.five {
+    font-weight: bold;
+}
+.three {
+    
+    font-weight: bold;
+}
+.both {
+    font-weight: bold;
+    color: red;
+}

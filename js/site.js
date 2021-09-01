@@ -33,7 +33,7 @@ function generateNumbers(fV, sV) {
 }
 function displayNumbers(numbers){
     //this is where we'll pump the numbers of the array into the html.
-    let resultHtml = "";
+    let resultHtml = '<tr>';    
     //Itterate over the array and highlight divisible by 3s and 5s
     for (let index = 0; index < numbers.length; index++) {
         //define the index:
@@ -49,18 +49,58 @@ function displayNumbers(numbers){
          
         if (number % 3 == 0 && number % 5 == 0) {
             number = heyo;
+            className = "both";
         }
         else if (number % 5 == 0) {
             number = yo;      
-            className = "odd";           
+            className = "five";           
         }
         else if (number % 3 == 0) {
             number = hey;         
-            className = "even";   
-        }
-        
-        resultHtml += `<tr><td class="${className}">${number}</td></tr>`;        
+            className = "three";   
+        }         
+        if (index % 4 == 0 && index != 0) {
+                resultHtml += '</tr>';
+                resultHtml += '<tr>';
+            } 
+            resultHtml += `<td class="${className}">${number}</td>`;            
+                     
     }
     document.getElementById("results").innerHTML = resultHtml;
 }
 
+
+// ORIGINAL
+// function displayNumbers(numbers){
+//     //this is where we'll pump the numbers of the array into the html.
+//     let resultHtml = "";
+//     //Itterate over the array and highlight divisible by 3s and 5s
+//     for (let index = 0; index < numbers.length; index++) {
+//         //define the index:
+//         let number = numbers[index];
+//         let className = "even";
+//         //create the str for hey.
+//         let hey = 'hey';
+//         //create the str for yo.
+//         let yo = 'yo';   
+//         //creat the str for heyo.
+//         let heyo = 'heyo';
+
+         
+//         if (number % 3 == 0 && number % 5 == 0) {
+//             number = heyo;
+//             className = "both";
+//         }
+//         else if (number % 5 == 0) {
+//             number = yo;      
+//             className = "five";           
+//         }
+//         else if (number % 3 == 0) {
+//             number = hey;         
+//             className = "three";   
+//         }
+        
+//         resultHtml += `<tr><td class="${className}">${number}</td></tr>`;        
+//     }
+//     document.getElementById("results").innerHTML = resultHtml;
+// }
