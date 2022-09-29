@@ -35,28 +35,28 @@ function displayNumbers(numbers){
     //this is where we'll pump the numbers of the array into the html.
     let resultHtml = '<tr>';    
     //Itterate over the array and highlight divisible by 3s and 5s
+    //create the str for hey.
+    let fizz = 'fizz';
+    //create the str for yo.
+    let buzz = 'buzz';   
+    //creat the str for heyo.
+    let FizzBuzz = 'FizzBuzz';
     for (let index = 0; index < numbers.length; index++) {
         //define the index:
         let number = numbers[index];
-        let className = "even";
-        //create the str for hey.
-        let hey = 'hey';
-        //create the str for yo.
-        let yo = 'yo';   
-        //creat the str for heyo.
-        let heyo = 'heyo';
+        let className = "even";      
 
          
         if (number % 3 == 0 && number % 5 == 0) {
-            number = heyo;
+            number = FizzBuzz;
             className = "both";
         }
         else if (number % 5 == 0) {
-            number = yo;      
+            number = buzz;      
             className = "five";           
         }
         else if (number % 3 == 0) {
-            number = hey;         
+            number = fizz;         
             className = "three";   
         }         
         if (index % 4 == 0 && index != 0) {
